@@ -1,38 +1,417 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (min-width:700px) {
+  body {
+    background-color: #18181B;
+  }
+  
+  nav {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+  }
+  
+  h1 {
+    color: white;
+    font-size: 1.8em;
+    color: #772CE8;
+    font-family: 'Mochiy Pop One', sans-serif;
+    letter-spacing: 5px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
+  
+  .content-wrapper {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20%;
+  }
+  
+  .inputWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    border-radius: 15px 50px 30px 5px;
+    padding: 20px;
+    border-radius: 15px 50px;
+  }
+  
+  .fileInsertLabel {
+    color: white;
+    font-weight: bolder;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #772CE8;
+    border: none;
+    outline: none;
+    transition: .3s;
+  }
+  
+  .fileInsertLabel:hover {
+    color: #772CE8;
+    background-color: #fff;
+  }
+  
+  input[type="file"] {
+    display: none;
+  }
+  
+  .textInput {
+    border-style: none;
+    background-color: #1D1C21;
+    width: 300px;
+    height: 25px;
+    outline: none;
+    border-bottom: 1px solid;
+    border-color: #772CE8;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: Roboto, sans-serif;
+    font-weight: bolder;
+    color: white;
+  }
+  
+  .meme-div {
+    height: 400px;
+    width: 400px;
+    position: relative;
+    text-align: center;
+    color: black;
+    border: 2px solid #772CE8;
+  }
+  
+  .botmemeText {
+    text-align: center;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 15px 0;
+    padding: 0 5px;
+    font-family: impact;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:2px 2px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    0px 2px 0 #000,
+    2px 0px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 2px 5px #000;
+    inline-size: 350px;
+    overflow-wrap: break-word;
+  }
+  
+  .topmemeText {
+    text-align: center;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 15px 0;
+    padding: 0 5px;
+    font-family: impact;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:2px 2px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    0px 2px 0 #000,
+    2px 0px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 2px 5px #000;
+    inline-size: 350px;
+    overflow-wrap: break-word;
+  }
+  
+  .memeImage {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .suggestWrap {
+    align-self: center;
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+  }
+  
+  .suggestedMeme {
+    width: 100%;
+    height: 100%;
+  }
+  
+  #div1 {
+    border: 1px solid #772CE8;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+  }
+  
+  #div2 {
+    border: 1px solid #772CE8;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+  }
+  
+  #div3 {
+    border: 1px solid #772CE8;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+  }
+  
+  #div4 {
+    border: 1px solid #772CE8;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+  }
+  
+  #div5 {
+    border: 1px solid #772CE8;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+  }
+  
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 1; /* Firefox */
+    font-family: Roboto, sans-serif;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #fff;
+    font-family: Roboto, sans-serif;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #fff;
+    font-family: Roboto, sans-serif;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width:700px) {
+  body {
+    background-color: #18181B;
   }
-  to {
-    transform: rotate(360deg);
+
+  nav {
+    text-align: center;
+  }
+
+  h1 {
+    color: white;
+    font-size: 1.8em;
+    color: #772CE8;
+    font-family: 'Mochiy Pop One', sans-serif;
+    letter-spacing: 5px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
+
+  .content-wrapper {
+    /* border: 2px solid red; */
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+  }
+
+  .inputWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 70%;
+  }
+
+  .textInput {
+    border-style: none;
+    background-color: #1D1C21;
+    width: 300px;
+    height: 25px;
+    outline: none;
+    border-bottom: 1px solid;
+    border-color: #772CE8;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: Roboto, sans-serif;
+    font-weight: bolder;
+    color: white;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+    
+  .fileInsertLabel {
+    color: white;
+    font-weight: bolder;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #772CE8;
+    border: none;
+    outline: none;
+    transition: .3s;
+    text-align: center;
+    width: 200px;
+  }
+  
+  .fileInsertLabel:hover {
+    color: #772CE8;
+    background-color: #fff;
+  }
+
+  .suggestWrap {
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+  }
+
+  #div1 {
+    border: 1px solid #772CE8;
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+  }
+  
+  #div2 {
+    border: 1px solid #772CE8;
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+  }
+  
+  #div3 {
+    border: 1px solid #772CE8;
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+  }
+  
+  #div4 {
+    border: 1px solid #772CE8;
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+  }
+  
+  #div5 {
+    border: 1px solid #772CE8;
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+  }
+
+  .suggestedMeme {
+    width: 100%;
+    height: 100%;
+  }
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 1; /* Firefox */
+    font-family: Roboto, sans-serif;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #fff;
+    font-family: Roboto, sans-serif;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #fff;
+    font-family: Roboto, sans-serif;
+  }
+  
+  .memeImage {
+    height: 380px;
+    width: 380px;
+    border: 2px solid #772CE8;
+  }
+  .meme-div {
+    margin-top: 3%;
+    height: 380px;
+    width: 380px;
+  }
+
+  .botmemeText {
+    text-align: center;
+    position: absolute;
+    top: 630px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 15px 0;
+    padding: 0 5px;
+    font-family: impact;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:2px 2px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    0px 2px 0 #000,
+    2px 0px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 2px 5px #000;
+    inline-size: 350px;
+    overflow-wrap: break-word;
+  }
+  
+  .topmemeText {
+    text-align: center;
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 15px 0;
+    padding: 0 5px;
+    font-family: impact;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    text-shadow:2px 2px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    0px 2px 0 #000,
+    2px 0px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 2px 5px #000;
+    inline-size: 350px;
+    overflow-wrap: break-word;
   }
 }
